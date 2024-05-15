@@ -18,6 +18,16 @@ if (isset($_POST["submit"])) {
             $_SESSION["products"][] = $product;
         }
     }
+
+if (isset($_GET["action"])) {
+    switch($_GET["action"]){
+        case "add": 
+        case "delete": 
+        case "clear": 
+        case "up-qtt": 
+        case "down-qtt": 
+    }
+}
     
     header("Location:index.php");
 
