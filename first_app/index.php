@@ -48,7 +48,9 @@
         </p>
     </form>
     </div>
-
-    
+    <?php
+    session_start();
+    echo "<div class='card position-absolute top-10 p-2'>Quantité totale d'articles : ".$_SESSION['qttTotale']."</div>";
+    ?>
 </body>
 </html>
