@@ -9,13 +9,13 @@ if (isset($_POST["submit"])) {
     if ($name && $price && $qtt){
         
         $product = [
-            "name" -> $name,
-            "price" -> $price,
-            "qtt" -> $qtt,
-            "total" -> $price*$qtt
+            "name" => $name,
+            "price" => $price,
+            "qtt" => $qtt,
+            "total" => $price*$qtt
             ];
             
-            $_SESSION["product"][] = $product
+            $_SESSION["products"][] = $product;
         }
     }
     
