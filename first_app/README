@@ -1,1 +1,19 @@
 Exercice de mise en place de ma première application en PHP
+
+Énoncé exercice :
+
+Vous venez de créer votre première application web dynamique en PHP, bravo !
+Il vous est désormais demandé de vous occuper de plusieurs fonctionnalités supplémentaires à apporter à votre application :
+S'occuper du design (les lignes 6 et 9, respectivement dans index.php et recap.php attendent avec impatience votre feuille de style CSS pour améliorer le rendu visuel de ces deux pages)
+Permettre à l'utilisateur d'aller sur la page recap.php ou index.php à tout moment, à l’aide d’une barre de navigation
+Afficher le nombre de produits présents en session à tout moment, quelle que soit la page affichée (on parle ici de la quantité totale d’articles, non pas du nombre de produits distincts)
+Faire en sorte que le fichier traitement.php, lorsqu'il retourne au formulaire, créé un message (d'erreur ou de succès, selon le cas de figure) et permettre à index.php de l'afficher
+Ajouter trois fonctionnalités utiles dans recap.php :
+
+Supprimer un produit en session (selon le choix de l'utilisateur)
+
+Supprimer tous les produits en session en une seule fois
+
+Modifier les quantités de chaque produit grâce à deux points "+" et "-" positionnés de part et d'autre du nombre dans la cellule
+
+Ajouter des messages de notifications pour la suppression d’article
