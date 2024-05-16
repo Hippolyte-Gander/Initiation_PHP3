@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,9 +24,10 @@
             </ul>
         </div>
     </nav>
+    
+    <a href="traitement.php?action=clear" class="btn btn-danger position-absolute end-0">Vider panier</a>
 
     <div class="container">
-
     <form action="traitement.php?action=add" method="post">
         <p>
             <label>
@@ -48,9 +52,14 @@
         </p>
     </form>
     </div>
-    <?php
-    session_start();
-    echo "<div class='card position-absolute top-10 p-2'>Quantité totale d'articles : ".$_SESSION['qttTotale']."</div>";
+ <span>
+    <?= "Quantité de produits totale : ".$_SESSION['qttTotale'];
     ?>
+ </span>
+ <span><br>
+    <?= $_SESSION['message'];
+    ?>
+ </span>
+
 </body>
 </html>

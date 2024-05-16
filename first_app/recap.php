@@ -10,8 +10,21 @@ session_start();
     <title>Récapitulatif des produits</title>
 </head>
 <body>
+    
     <?php
         if (!isset($_SESSION["products"]) || empty($_SESSION["products"])){
+            echo '<nav class="navbar navbar-expand navbar-dark bg-dark mt-4 mb-4">',
+            '<div class="container">',
+                '<ul class="navbar-nav">',
+                    '<li class="nav-item">',
+                        '<a href="./index.php" class="nav-link active" aria-current="page">Index</a>',
+                    '</li>',
+                    '<li class="nav-item">',
+                        '<a href="#" class="nav-link active">Récap</a>',
+                    '</li>',
+                '</ul>',
+            '</div>',
+        '</nav>';
             echo "<p>Aucun produit en session...</p>";
         } else {
             echo '<nav class="navbar navbar-expand navbar-dark bg-dark mt-4 mb-4">',
@@ -44,8 +57,12 @@ session_start();
                         "<td>".$index."</td>",
                         "<td>".$product["name"]."</td>",
                         "<td>".number_format($product["price"],2,",","&nbsp;")."&nbsp;€</td>",
-                        "<td>".$product["qtt"]."</td>",
+                        "<td><a href='traitement.php?action=up-qtt&name=".urlencode($product["name"]).
+                        "' class='btn btn-success'>+</a>".$product["qtt"]."<a href='traitement.php?action=down-qtt&name=".urlencode($product["name"]).
+                        "' class='btn btn-success'>-</a></td>",
                         "<td>".number_format($product["total"],2,",","&nbsp;")."&nbsp;€</td>",
+                        "<td><a href='traitement.php?action=delete&name=".urlencode($product["name"]).
+            "' class='btn btn-danger'>Supprimer produit</a></td>",
                     "</tr>";
                 $totalGeneral+= $product["total"];
                 $qttTotale+= $product["qtt"];
@@ -57,7 +74,8 @@ session_start();
                 "</tr>",
                 "</tbody>",
                 "</table>",
-                "<div class='card position-absolute top-10 p-2'>Quantité totale d'articles : $qttTotale</div>";
+                "<div class='card position-absolute top-10 end-0 p-2'>Quantité totale d'articles : $qttTotale</div>",
+                " <div><br>" .$_SESSION['message']."</div>;";
         }
     ?>
 </body>
